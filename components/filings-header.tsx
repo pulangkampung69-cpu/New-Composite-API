@@ -1,10 +1,24 @@
 "use client";
 
-import { Search, Filter, Calendar } from "lucide-react";
+import { Search, Filter, Calendar, Send } from "lucide-react";
 import { useState } from "react";
 
 export function FilingsHeader() {
   const [searchQuery, setSearchQuery] = useState("");
+  const [isPublishing, setIsPublishing] = useState(false);
+
+  const handlePublish = async () => {
+    setIsPublishing(true);
+    try {
+      // Simulate publish action
+      await new Promise(resolve => setTimeout(resolve, 800));
+      // You can replace this with actual API call
+      console.log("[v0] Publishing filings...");
+      // Show success toast/notification here
+    } finally {
+      setIsPublishing(false);
+    }
+  };
 
   return (
     <header className="sticky top-0 z-30 bg-background/95 backdrop-blur border-b border-border">
@@ -46,6 +60,17 @@ export function FilingsHeader() {
             >
               <Calendar className="h-4 w-4" />
               <span>30 Hari</span>
+            </button>
+
+            {/* Publish button */}
+            <button
+              type="button"
+              onClick={handlePublish}
+              disabled={isPublishing}
+              className="flex items-center justify-center gap-2 px-4 py-2.5 bg-primary border border-primary rounded-xl text-sm font-medium text-background hover:bg-primary/90 hover:border-primary/90 transition-colors disabled:opacity-70 disabled:cursor-not-allowed"
+            >
+              <Send className={`h-4 w-4 ${isPublishing ? 'animate-spin' : ''}`} />
+              <span>{isPublishing ? 'Publishing...' : 'Publish'}</span>
             </button>
           </div>
         </div>
