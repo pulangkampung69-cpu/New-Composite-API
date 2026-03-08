@@ -1,34 +1,31 @@
 {
-  "dependencies": {
-    "axios": "^0.21.1",
-    "compression": "^1.7.4",
-    "connect-timeout": "^1.9.0",
-    "dotenv": "^10.0.0",
-    "express": "^4.17.1",
-    "express-rate-limit": "^5.3.0",
-    "helmet": "^4.6.0",
-    "mongoose": "^5.13.3",
-    "morgan": "^1.10.0",
-    "ncrypt-js": "^2.0.0",
-    "puppeteer": "^10.1.0",
-    "response-time": "^2.3.2"
-  },
-  "name": "new-composite-api",
+  "name": "saham-insider",
   "version": "1.0.0",
-  "description": "An API that scrapes Stockbit equity information",
-  "main": "app.js",
+  "private": true,
   "scripts": {
-    "start": "node app.js",
-    "dev": "nodemon"
+    "dev": "next dev --turbopack",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
   },
-  "keywords": [
-    "API",
-    "stockbit",
-    "stocks",
-    "equity",
-    "express",
-    "javascript"
-  ],
-  "author": "Christian Harjuno (Sorata)",
-  "license": "ISC"
+  "dependencies": {
+    "next": "^16.0.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "recharts": "^2.15.0",
+    "lucide-react": "^0.468.0",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "tailwind-merge": "^2.5.5",
+    "swr": "^2.2.5"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.0",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "typescript": "^5.7.0",
+    "tailwindcss": "^4",
+    "@tailwindcss/postcss": "^4",
+    "babel-plugin-react-compiler": "^19.0.0-beta-e993439-20250328"
+  }
 }
